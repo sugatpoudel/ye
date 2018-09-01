@@ -5,7 +5,7 @@ import os.path
 from PIL import Image, ImageFont, ImageDraw
 from functools import reduce
 
-DEFAULT_COVER_IMAGE = 'ye-cover-hq.jpg'
+DEFAULT_COVER_IMAGE = 'ye-cover.jpg'
 DEFAULT_FONT_NAME = 'ye-font-regular.ttf'
 
 def create_image(text, cover_img_name=DEFAULT_COVER_IMAGE, font_name=DEFAULT_FONT_NAME,
