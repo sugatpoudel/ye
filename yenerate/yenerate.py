@@ -66,9 +66,9 @@ def wrap_text(text, max_width=15):
 def main():
     parser = ArgumentParser(description="generate custom ye album art")
     parser.add_argument(
-        "-c", "--cover", help="the background album art", default="yenerate/ye_album_art.jpg")
+        "-c", "--cover", help="the background album art", default="yenerate/data/ye_album_art.jpg")
     parser.add_argument(
-        "-f", "--font", help="the path to the ye font", default="yenerate/ye_font_num_regular.ttf")
+        "-f", "--font", help="the path to the ye font", default="yenerate/data/ye_font_num_regular.ttf")
     parser.add_argument(
         "-o", "--output", help="the output file name", default="my_ye.jpg")
     parser.add_argument("text", help="the ye text to render")
