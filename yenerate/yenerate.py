@@ -1,6 +1,4 @@
 import textwrap
-import sys
-import os.path
 import pkg_resources
 
 from argparse import ArgumentParser
@@ -13,7 +11,12 @@ DEFAULT_FONT_PATH = pkg_resources.resource_filename(
     __name__, "data/ye_font_num_regular.ttf")
 
 
-def create_image(text, cover_img_path=DEFAULT_COVER_IMAGE_PATH, font_path=DEFAULT_FONT_PATH, font_size=120, text_color=(41, 247, 78), line_spacing=55):
+def create_image(text,
+                 cover_img_path=DEFAULT_COVER_IMAGE_PATH,
+                 font_path=DEFAULT_FONT_PATH,
+                 font_size=120,
+                 text_color=(41, 247, 78),
+                 line_spacing=55):
     """
     Overlays text over the image corresponding to cover_img_name.
     Returns an Image object with the text overlay.
