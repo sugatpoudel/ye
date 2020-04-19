@@ -1,5 +1,7 @@
 # yenerate
 
+![Python package](https://github.com/groupbool/yenerate/workflows/Python%20package/badge.svg?branch=master)
+
 A simple album art generator for Kanye West's 2018 album *ye*.
 This python script uses `pillow` to overlay a given text.
 
