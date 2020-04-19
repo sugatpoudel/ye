@@ -1,13 +1,19 @@
 import textwrap
 import sys
 import os.path
+import pkg_resources
 
 from argparse import ArgumentParser
 from PIL import Image, ImageFont, ImageDraw
 from functools import reduce
 
+DEFAULT_COVER_IMAGE_PATH = pkg_resources.resource_filename(
+    __name__, "data/ye_album_art.jpg")
+DEFAULT_FONT_PATH = pkg_resources.resource_filename(
+    __name__, "data/ye_font_num_regular.ttf")
 
-def create_image(text, cover_img_path, font_path, font_size=120, text_color=(41, 247, 78), line_spacing=55):
+
+def create_image(text, cover_img_path=DEFAULT_COVER_IMAGE_PATH, font_path=DEFAULT_FONT_PATH, font_size=120, text_color=(41, 247, 78), line_spacing=55):
     """
     Overlays text over the image corresponding to cover_img_name.
     Returns an Image object with the text overlay.
@@ -44,7 +50,7 @@ def create_image(text, cover_img_path, font_path, font_size=120, text_color=(41,
 def wrap_text(text, max_width=15):
     """
     wraps text such that each line has a maximum
-    width of 20 characters. Increases the spacing between
+    width of max_width characters. Increases the spacing between
     each word.
 
     Returns the wrapped text along with the line with
@@ -66,9 +72,9 @@ def wrap_text(text, max_width=15):
 def main():
     parser = ArgumentParser(description="generate custom ye album art")
     parser.add_argument(
-        "-c", "--cover", help="the background album art", default="yenerate/data/ye_album_art.jpg")
+        "-c", "--cover", help="the background album art", default=DEFAULT_COVER_IMAGE_PATH)
     parser.add_argument(
-        "-f", "--font", help="the path to the ye font", default="yenerate/data/ye_font_num_regular.ttf")
+        "-f", "--font", help="the path to the ye font", default=DEFAULT_FONT_PATH)
     parser.add_argument(
         "-o", "--output", help="the output file name", default="my_ye.jpg")
     parser.add_argument("text", help="the ye text to render")
