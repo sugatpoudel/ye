@@ -8,4 +8,7 @@ __pycache__/
 .DS_Store
 
 # Output files
-my-ye.jpg
+my_ye.jpg
+
+# vscode
+.vscode
